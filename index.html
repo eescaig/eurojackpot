@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app='controllers' ng-strict-di>
+  <head>
+    <title>EUROJACKPOT RESULTS & WINNING NUMBERS</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container" ng-controller='EurojackpotController as ctrl'>
+      <div class="form-group message" ng-if="ctrl.error">
+        <p class="navbar-text"><span class={{ctrl.styleText}}>{{ctrl.error}}</span></p>
+      </div>
+    </div>
+
+    <script src="lib/angular.min.js"></script>
+    <!-- Modules -->
+    <script src="dist/services/services.module.js"></script>
+    <script src="dist/controllers/controllers.module.js"></script>
+    <!-- Controllers -->
+    <script src="dist/services/eurojackpot.service.js"></script>
+    <script src="dist/controllers/eurojackpot.controller.js"></script>
+
+  </body>
+</html>
