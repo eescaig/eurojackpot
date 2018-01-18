@@ -1,0 +1,71 @@
+.l-lottery-numbers-container {
+    display: inline-block;
+    font-size: 14px;
+    color: #012406;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.l-lottery-number {
+    display: inline-block;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border: 1px solid #cb3131;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 7px;
+}
+
+.extra {
+    border: 1px solid #ca7f26;
+}
+
+.l-results-header {
+  margin-top: 10px;
+  border-bottom: 1px solid #d9deda;
+  justify-content: space-between;
+  margin-bottom: 21px;
+  padding-bottom: 7px;
+}
+
+.l-header-logo {
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 11px;
+}
+
+.logo {
+    height: 39px;
+    width: 125px;
+}
+
+.l-header-container {
+    background: #fff;
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    left: 0;
+    z-index: 6;
+}
+
+.l-header {
+    width: 960px;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.l-header-banner {
+    margin-left: 70px;
+    margin-right: auto;
+    min-width: 0;
+}
+
+.l-results-date {
+  margin-left: 25px;
+}
