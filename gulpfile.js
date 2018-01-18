@@ -8,8 +8,13 @@ var browserSync = require('browser-sync').create();
 
 gulp.task('es6', function () {
     return gulp.src('src/**/*.js')
-        .pipe(babel())
-        .pipe(gulp.dest('dist'));
+          .pipe(babel())
+          .pipe(gulp.dest('dist'));
+});
+
+gulp.task('json', function () {
+    return gulp.src('src/**/*.json')
+          .pipe(gulp.dest('dist'));
 });
 
 // create a task that ensures the `js` task is complete before
@@ -20,14 +25,14 @@ gulp.task('js-watch', ['es6'], function (done) {
 });
 
 gulp.task('karma', ['es6'], function (done) {
-  new Server({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
-  }, done).start();
+    new Server({
+      configFile: __dirname + '/karma.conf.js',
+      singleRun: true
+    }, done).start();
 });
 
 // use default task to launch Browsersync and watch JS files
-gulp.task('default', ['es6', 'karma'], function () {
+gulp.task('default', ['json', 'es6', 'karma'], function () {
 
     // Serve files from the root of this project
     browserSync.init({
