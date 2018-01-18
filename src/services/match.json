@@ -1,0 +1,14 @@
+[
+{"match":"5 Numbers + 2 Euronumbers"},
+{"match":"5 Numbers + 1 Euronumber"},
+{"match":"5 Numbers + 0 Euronumbers"},
+{"match":"4 Numbers + 2 Euronumbers"},
+{"match":"4 Numbers + 1 Euronumber"},
+{"match":"4 Numbers + 0 Euronumber"},
+{"match":"3 Numbers + 2 Euronumbers"},
+{"match":"2 Numbers + 2 Euronumbers"},
+{"match":"3 Numbers + 1 Euronumber"},
+{"match":"3 Numbers + 0 Euronumbers"},
+{"match":"1 Number + 2 Euronumbers"},
+{"match":"2 Numbers + 1 Euronumber"}
+]
