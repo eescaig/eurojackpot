@@ -1,6 +1,7 @@
 "use strict";
 
 var gulp = require('gulp');
+var Server = require('karma').Server;
 var babel = require('gulp-babel');
 var jasmine = require('gulp-jasmine');
 var browserSync = require('browser-sync').create();
@@ -18,17 +19,15 @@ gulp.task('js-watch', ['es6'], function (done) {
     done();
 });
 
-
-// Test JS
-gulp.task('test', function () {
-    return gulp.src('test/**/*.js')
-        .pipe(jasmine());
+gulp.task('karma', ['es6'], function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
 });
 
-gulp.task('run-test', ['es6', 'test']);
-
 // use default task to launch Browsersync and watch JS files
-gulp.task('default', ['es6'], function () {
+gulp.task('default', ['es6', 'karma'], function () {
 
     // Serve files from the root of this project
     browserSync.init({
