@@ -1,23 +1,72 @@
 <!DOCTYPE html>
 <html ng-app='controllers' ng-strict-di>
   <head>
-    <title>EUROJACKPOT RESULTS & WINNING NUMBERS</title>
+    <title>EUROJACKPOT</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/eurojackpot.css">
   </head>
+
   <body>
-    <div class="container" ng-controller='EurojackpotController as ctrl'>
-      <div class="form-group message" ng-if="ctrl.error">
-        <p class="navbar-text"><span class={{ctrl.styleText}}>{{ctrl.error}}</span></p>
-      </div>
+    <div class="l-header-container">
+      <section id="topSection" class="l-header">
+          <div class="d-inline-block l-header-logo">
+             <img onerror="this.src='//www.lottoland.com/skins/lottoland/images/logo/ll-logo-green-ba820bea2fc3677f.png'"
+                src="//www.lottoland.com/skins/lottoland/images/logo/ll-logo-green-14c4a0ddaf8c5179.svg" class="logo">
+          </div>
+
+          <div class="d-inline-block l-header-banner">
+            <h3>EUROJACKPOT RESULTS & WINNING NUMBERS</h3>
+          </div>
+      </section>
     </div>
 
-    <script src="lib/angular.min.js"></script>
+    <div class="container" ng-controller='EurojackpotController as ctrl'>
+        <div class="form-group message" ng-if="ctrl.error">
+          <p class="navbar-text"><span class={{ctrl.styleText}}>{{ctrl.error}}</span></p>
+        </div>
+        <header class="l-results-header"></header>
+        <div class="l-results-date" ng-if="ctrl.currentDate">
+          <h5>EuroJackpot Results for {{ctrl.currentDate}} </h5>
+        </div>
+
+        <nav class="nav l-lottery-numbers-container l-results-date">
+            <li class="nav-item l-lottery-number" ng-repeat="num in ctrl.numbers"> {{  num }} </li>
+            <li class="nav-item l-lottery-number extra" ng-repeat="num in ctrl.euroNumbers"> {{  num }} </li>
+        </nav>
+        </br>
+        </br>
+        <table class="table">
+            <thead >
+              <tr>
+                <th scope="col"><p class="text-center">Tier</p></th>
+                <th scope="col"><p class="text-center">Match</p></th>
+                <th scope="col"><p class="text-center">Winners</p></th>
+                <th scope="col"><p class="text-center">Amount</p></th>
+              </tr>
+            </thead>
+            <tbody>
+               <tr ng-repeat="item in ctrl.winnersArray">
+                  <th scope="row"><p class="text-center">{{item.romNum}}</p></th>
+                  <td><p class="text-center">{{ item.match}}</p></td>
+                  <td><p class="text-center">{{ item.winners }}X</p></td>
+                  <td><p class="text-center" title="{{ item.prize }}">{{ item.prize }}</p></td>
+               </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Libs -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
     <!-- Modules -->
     <script src="dist/services/services.module.js"></script>
     <script src="dist/controllers/controllers.module.js"></script>
     <!-- Controllers -->
     <script src="dist/services/eurojackpot.service.js"></script>
+    <script src="src/services/match.json"></script>
+    <script src="dist/services/datamatch.service.js"></script>
     <script src="dist/controllers/eurojackpot.controller.js"></script>
 
   </body>
