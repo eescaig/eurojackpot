@@ -22,6 +22,11 @@
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.1"
   },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "dependencies": {
     "angular": "^1.6.8",
     "bootstrap": "^4.0.0-alpha.6",
