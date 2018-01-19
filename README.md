@@ -9,5 +9,5 @@ Dependencies are included in package.json.
 Steps to follow:
 * Clone github repository.
 * Open a cmd from root file of your project.
-* Rum `nmp install` to retrieve all project dependencies, it will be downloaded into the node_module file.
+* Run `nmp install` to retrieve all project dependencies, it will be downloaded into the node_module file.
 * Run `gulp` to execute tests and start server.
